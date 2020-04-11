@@ -1,3 +1,4 @@
+import 'package:cinemapp/src/delegates/search_delegate.dart';
 import 'package:cinemapp/src/models/movie_model.dart';
 import 'package:cinemapp/src/providers/movies_provider.dart';
 import 'package:cinemapp/src/widgets/card_swiper_widget.dart';
@@ -20,6 +21,14 @@ class HomePage extends StatelessWidget {
         title: Text('CinemApp'),
         backgroundColor: Colors.red,
         centerTitle: false,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+              showSearch(context: context, delegate: DataSearch());
+            },
+          )
+        ],
       ),
       body : Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
